@@ -1,0 +1,61 @@
+﻿@model ShoppingCartViewModel
+
+<div class="row checkoutForm">
+    <h2>Your shopping cart</h2>
+    <h4>Here are the Product in your shopping cart.</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Selected amount</th>
+                <th>Products</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.ShoppingCart.ShoppingCartItem)
+            {
+                <tr>
+                    <td class="text-center">@line.Amount</td>
+                    <td class="text-left">@line.Products.Name</td>
+                    <td class="text-right">@line.Products.Price.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Amount * line.Products.Price).ToString("c"))
+                    </td>
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-drinkId="@line.Products.Id"></a></td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.ShoppingCartTotal.ToString("c")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check out</a>
+            <a class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Add more Products<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Fresh Fish">Fresh Fish</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Smoked Fish">Smoked Fish</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Dried / Fried Fish">Dried / Fried Fish</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Meat">Meat</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Tubers">Tubers</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Vegetables">Vegetables</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Cereal">Cereal</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Groceries">Groceries</a></li>
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="Fruits">Fruits</a></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>
