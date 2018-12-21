@@ -77,7 +77,7 @@ namespace DrinkAndGo.Controllers
                 drinks = _drinkRepository.Drinks.Where(p=> p.Name.ToLower().Contains(_searchString.ToLower()));
             }
 
-            return View("~/Views/Drink/List.cshtml", new ProductsListViewModel{Drinks = drinks, CurrentCategory = "All drinks" });
+            return View("~/Views/Products/List.cshtml", new ProductsListViewModel{Drinks = drinks, CurrentCategory = "All drinks" });
         }
 
         public ViewResult Details(int drinkId)
