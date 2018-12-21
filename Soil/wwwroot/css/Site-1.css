@@ -50,12 +50,15 @@ a.remove:hover{
     min-height:10%;
 }
 
-img {
-    min-width: 100px;
-    min-height: 100px;
+
+
+
+img.design {
+ 
+    width: 100px;
+}
+img.slide-image {
+    width: 100%;
+    height: 50%;
 }
 
-.design{
-    height:100px;
-   
-}

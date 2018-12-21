@@ -39,3 +39,18 @@ body {
         display: none;
     }
 }
+
+img.design {
+    /*width: 160rem !important;*/
+    height:100px;
+}
+
+
+img.slide-image {
+    width: 1000px !important;
+    height: 100% !important;
+}
+img.slide-image {
+    width: 113rem !important;
+    height: 44rem !important;
+}

@@ -2,7 +2,7 @@
     <a asp-controller="Products"
        asp-action="Index"
        class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" style="background-color:red">
         @foreach (var category in Model)
         {
             <li>
