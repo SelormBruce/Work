@@ -4,7 +4,7 @@
     <div class="thumbnail">
         <img src="@Model.ImageThumbnailUrl" alt="" class="design" />
         <div class="caption">
-            <h3 class="pull-right">@Model.Price GHC</h3>
+            @*<h3 class="pull-right">@Model.Price GHC</h3>*@
             <h3 style="color:red">
                 <a asp-controller="Products" asp-action="Details" asp-route-drinkId="@Model.Id">@Model.Name</a>
             </h3>

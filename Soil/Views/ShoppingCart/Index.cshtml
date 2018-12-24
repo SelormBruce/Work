@@ -17,7 +17,7 @@
             @foreach (var line in Model.ShoppingCart.ShoppingCartItem)
             {
                 <tr>
-                    <td class="text-center">@line.Amount</td>
+                    @*<td class="text-center">@line.Amount</td>*@
                     <td class="text-left">@line.Products.Name</td>
                     <td class="text-right">@line.Products.Price.ToString("c")</td>
                     <td class="text-right">
